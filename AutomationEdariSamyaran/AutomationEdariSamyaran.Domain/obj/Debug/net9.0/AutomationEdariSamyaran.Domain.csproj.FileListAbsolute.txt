@@ -1,0 +1,12 @@
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\bin\Debug\net9.0\AutomationEdariSamyaran.Domain.deps.json
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\bin\Debug\net9.0\AutomationEdariSamyaran.Domain.dll
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\bin\Debug\net9.0\AutomationEdariSamyaran.Domain.pdb
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.AssemblyInfoInputs.cache
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.AssemblyInfo.cs
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.csproj.CoreCompileInputs.cache
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.dll
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\refint\AutomationEdariSamyaran.Domain.dll
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.pdb
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\ref\AutomationEdariSamyaran.Domain.dll
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.csproj.AssemblyReference.cache

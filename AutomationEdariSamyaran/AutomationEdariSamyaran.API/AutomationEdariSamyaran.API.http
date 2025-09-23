@@ -1,0 +1,6 @@
+@AutomationEdariSamyaran.API_HostAddress = http://localhost:5244
+
+GET {{AutomationEdariSamyaran.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
