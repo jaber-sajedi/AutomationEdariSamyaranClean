@@ -51,7 +51,7 @@ namespace AutomationEdariSamyaran.Infrastructure.Persistence
         public virtual DbSet<TBL_Archives_Koll> TBL_Archives_Kolls { get; set; }
         public virtual DbSet<TBL_Archives_Moein> TBL_Archives_Moeins { get; set; }
         public virtual DbSet<TBL_Archives_Tafzilli> TBL_Archives_Tafzillis { get; set; }
-        public virtual DbSet<TBL_Application_Setting> ApplicationSettings { get; set; }
+        public virtual DbSet<TBL_Application_Setting> TBL_ApplicationSettings { get; set; }
         public virtual DbSet<TBL_User_Permission> TBL_User_Permissions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
