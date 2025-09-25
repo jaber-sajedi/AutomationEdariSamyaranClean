@@ -1024,7 +1024,8 @@
       "AutomationEdariSamyaran.Infrastructure/1.0.0": {
         "dependencies": {
           "AutomationEdariSamyaran.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "8.0.6"
+          "Microsoft.EntityFrameworkCore": "8.0.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.6"
         },
         "runtime": {
           "AutomationEdariSamyaran.Infrastructure.dll": {

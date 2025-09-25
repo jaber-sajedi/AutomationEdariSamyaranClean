@@ -1,5 +1,6 @@
 ﻿using AutomationEdariSamyaran.API;
 using AutomationEdariSamyaran.Application.Contracts;
+using AutomationEdariSamyaran.Application.MediatR.Users.Handler;
 using AutomationEdariSamyaran.Domain.Entities;
 using AutomationEdariSamyaran.Domain.Interfaces;
 using AutomationEdariSamyaran.Infrastructure.Persistence;
@@ -46,7 +47,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 // ---------------- MediatR ----------------
-builder.Services.AddMediatR(typeof(Program).Assembly);
+builder.Services.AddMediatR(typeof(LoginQueryHandler).Assembly);
 
 // ---------------- Repository ----------------
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

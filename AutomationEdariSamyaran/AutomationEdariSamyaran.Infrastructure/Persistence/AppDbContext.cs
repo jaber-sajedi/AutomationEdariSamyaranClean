@@ -16,7 +16,7 @@ namespace AutomationEdariSamyaran.Infrastructure.Persistence
         {
         }
 
-        public virtual DbSet<TBL_User> TBL_Users { get; set; }
+        public virtual DbSet<TBL_User> TBL_User { get; set; }
         public virtual DbSet<TBL_Great_advice> TBL_Great_advice { get; set; }
         public virtual DbSet<TBL_Company_information> TBL_Company_information { get; set; }
         public virtual DbSet<TBL_letter_Subject> TBL_Letter_Subjects { get; set; }
@@ -57,7 +57,13 @@ namespace AutomationEdariSamyaran.Infrastructure.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+
+
+            //modelBuilder.Entity<TBL_User>(entity =>
+            //{
+            //    entity.HasKey(e => e.Id);
+            //    entity.Property(e => e.Id).HasColumnName("UserId"); // نام واقعی ستون در دیتابیس
+            //});
         }
     }
 }

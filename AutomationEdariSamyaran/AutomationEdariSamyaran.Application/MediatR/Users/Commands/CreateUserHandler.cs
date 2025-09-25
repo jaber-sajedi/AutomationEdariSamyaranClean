@@ -29,7 +29,7 @@ namespace AutomationEdariSamyaran.Application.MediatR.Users.Commands
             };
 
             await _repository.AddAsync(user);
-            return user.Id;
+            return user.Id_User;
         }
     }
 }
