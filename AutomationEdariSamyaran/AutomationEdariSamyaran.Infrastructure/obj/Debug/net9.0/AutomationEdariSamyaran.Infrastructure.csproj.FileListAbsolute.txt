@@ -13,3 +13,4 @@ D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Infrastructure\bin\Debug\net9.0\AutomationEdariSamyaran.Domain.dll
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Infrastructure\bin\Debug\net9.0\AutomationEdariSamyaran.Domain.pdb
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Infrastructure\obj\Debug\net9.0\Automati.58564842.Up2Date
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Infrastructure\obj\Debug\net9.0\AutomationEdariSamyaran.Infrastructure.sourcelink.json

@@ -150,3 +150,8 @@ D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\AutomationEdariSamyaran.Infrastructure.pdb
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\AutomationEdariSamyaran.Domain.dll
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\AutomationEdariSamyaran.Domain.pdb
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\BouncyCastle.Crypto.dll
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\AutomationEdariSamyaran.Application.dll
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\AutomationEdariSamyaran.Application.pdb
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\obj\Debug\net9.0\AutomationEdariSamyaran.API.sourcelink.json
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

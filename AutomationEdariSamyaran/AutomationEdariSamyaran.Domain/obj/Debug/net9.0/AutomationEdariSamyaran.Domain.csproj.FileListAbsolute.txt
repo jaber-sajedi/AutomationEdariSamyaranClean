@@ -10,3 +10,4 @@ D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.pdb
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\ref\AutomationEdariSamyaran.Domain.dll
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.csproj.AssemblyReference.cache
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.Domain\obj\Debug\net9.0\AutomationEdariSamyaran.Domain.sourcelink.json

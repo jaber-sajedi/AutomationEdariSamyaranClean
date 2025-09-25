@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D8174F10-5AE7-43AC-947D-68A4FEBDBA04}|AutomationEdariSamyaran.Infrastructure\\AutomationEdariSamyaran.Infrastructure.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.infrastructure\\repository\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8174F10-5AE7-43AC-947D-68A4FEBDBA04}|AutomationEdariSamyaran.Infrastructure\\AutomationEdariSamyaran.Infrastructure.csproj|solutionrelative:automationedarisamyaran.infrastructure\\repository\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{50745F18-2463-4FA1-9F58-FFD35C015B2D}|AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.api\\automationedarisamyaran.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{50745F18-2463-4FA1-9F58-FFD35C015B2D}|AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj|solutionrelative:automationedarisamyaran.api\\automationedarisamyaran.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60F68495-2605-4A64-B94E-AFF0A57EBBC1}|AutomationEdariSamyaran.Application\\AutomationEdariSamyaran.Application.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.application\\automationedarisamyaran.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{60F68495-2605-4A64-B94E-AFF0A57EBBC1}|AutomationEdariSamyaran.Application\\AutomationEdariSamyaran.Application.csproj|solutionrelative:automationedarisamyaran.application\\automationedarisamyaran.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50745F18-2463-4FA1-9F58-FFD35C015B2D}|AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50745F18-2463-4FA1-9F58-FFD35C015B2D}|AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj|solutionrelative:automationedarisamyaran.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60F68495-2605-4A64-B94E-AFF0A57EBBC1}|AutomationEdariSamyaran.Application\\AutomationEdariSamyaran.Application.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.application\\mediatr\\users\\handler\\loginqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F68495-2605-4A64-B94E-AFF0A57EBBC1}|AutomationEdariSamyaran.Application\\AutomationEdariSamyaran.Application.csproj|solutionrelative:automationedarisamyaran.application\\mediatr\\users\\handler\\loginqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50745F18-2463-4FA1-9F58-FFD35C015B2D}|AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50745F18-2463-4FA1-9F58-FFD35C015B2D}|AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj|solutionrelative:automationedarisamyaran.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 219,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -23,24 +39,70 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 257,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutomationEdariSamyaran.Application",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Application\\AutomationEdariSamyaran.Application.csproj",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.Application\\AutomationEdariSamyaran.Application.csproj",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Application\\AutomationEdariSamyaran.Application.csproj",
+              "RelativeToolTip": "AutomationEdariSamyaran.Application\\AutomationEdariSamyaran.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-25T10:42:32.55Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Infrastructure\\Repository\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "AutomationEdariSamyaran.Infrastructure\\Repository\\UnitOfWork.cs",
-              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Infrastructure\\Repository\\UnitOfWork.cs",
-              "RelativeToolTip": "AutomationEdariSamyaran.Infrastructure\\Repository\\UnitOfWork.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAywE4AAABbAAAAAAAAAA==",
+              "Title": "AutomationEdariSamyaran.API",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj",
+              "RelativeToolTip": "AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-25T10:42:18.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginQueryHandler.cs",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Application\\MediatR\\Users\\Handler\\LoginQueryHandler.cs",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.Application\\MediatR\\Users\\Handler\\LoginQueryHandler.cs",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Application\\MediatR\\Users\\Handler\\LoginQueryHandler.cs",
+              "RelativeToolTip": "AutomationEdariSamyaran.Application\\MediatR\\Users\\Handler\\LoginQueryHandler.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA2wCIAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T13:16:33.452Z",
+              "WhenOpened": "2025-09-25T10:33:49.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.API\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "AutomationEdariSamyaran.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T10:12:12.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.API\\Program.cs",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.API\\Program.cs",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.API\\Program.cs",
+              "RelativeToolTip": "AutomationEdariSamyaran.API\\Program.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAqwDAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T14:52:39.5Z",
               "EditorCaption": ""
             }
           ]

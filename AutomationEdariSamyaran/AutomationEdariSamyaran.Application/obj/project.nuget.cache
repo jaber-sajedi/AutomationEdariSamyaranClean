@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "urijYHclw6w=",
+  "dgSpecHash": "js+cXQQJc5w=",
   "success": true,
   "projectFilePath": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Application\\AutomationEdariSamyaran.Application.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,12 @@
     "C:\\Users\\Jaber\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\Jaber\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.6\\microsoft.entityframeworkcore.abstractions.8.0.6.nupkg.sha512",
     "C:\\Users\\Jaber\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
-    "C:\\Users\\Jaber\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512"
+    "C:\\Users\\Jaber\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.0.0\\microsoft.identitymodel.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jaber\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.0.0\\microsoft.identitymodel.jsonwebtokens.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jaber\\.nuget\\packages\\microsoft.identitymodel.logging\\8.0.0\\microsoft.identitymodel.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jaber\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.0.0\\microsoft.identitymodel.tokens.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jaber\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\Jaber\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.0.0\\system.identitymodel.tokens.jwt.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }
