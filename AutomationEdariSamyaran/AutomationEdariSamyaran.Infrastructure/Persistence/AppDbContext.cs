@@ -34,13 +34,13 @@ namespace AutomationEdariSamyaran.Infrastructure.Persistence
         public virtual DbSet<TBL_Seller> TBL_Sellers { get; set; }
         public virtual DbSet<TBL_Organizational_Rank> TBL_Organizational_Ranks { get; set; }
         public virtual DbSet<TBL_Organizational_Chart> TBL_Organizational_Charts { get; set; }
-        public virtual DbSet<TBL_Units_measurement> TBL_Units_Measurements { get; set; }
-        public virtual DbSet<TBL_Goods_Importation> TBL_Goods_Importations { get; set; }
+        public virtual DbSet<TBL_Units_measurement> TBL_Units_Measurement { get; set; }
+        public virtual DbSet<TBL_Goods_Importation> TBL_Goods_Importation { get; set; }
         public virtual DbSet<TBL_Public_messages> TBL_Public_messages { get; set; }
-        public virtual DbSet<TBL_Public_Message_Permission> TBL_Public_Message_Permissions { get; set; }
-        public virtual DbSet<TBL_Request_leave> TBL_Request_leaves { get; set; }
-        public virtual DbSet<TBL_Request_leave_Permission> TBL_Request_leave_Permissions { get; set; }
-        public virtual DbSet<TBL_Rank_Permission> TBL_Rank_Permissions { get; set; }
+        public virtual DbSet<TBL_Public_Message_Permission> TBL_Public_Message_Permission { get; set; }
+        public virtual DbSet<TBL_Request_leave> TBL_Request_leave { get; set; }
+        public virtual DbSet<TBL_Request_leave_Permission> TBL_Request_leave_Permission { get; set; }
+        public virtual DbSet<TBL_Rank_Permission> TBL_Rank_Permission { get; set; }
         public virtual DbSet<TBL_Goods_Request> TBL_Goods_Requests { get; set; }
         public virtual DbSet<TBL_Goods_Departure> TblGoodsDepartures { get; set; }
         public virtual DbSet<TBL_PhoneBook> TBL_PhoneBooks { get; set; }
@@ -59,11 +59,7 @@ namespace AutomationEdariSamyaran.Infrastructure.Persistence
             base.OnModelCreating(modelBuilder);
 
 
-            //modelBuilder.Entity<TBL_User>(entity =>
-            //{
-            //    entity.HasKey(e => e.Id);
-            //    entity.Property(e => e.Id).HasColumnName("UserId"); // نام واقعی ستون در دیتابیس
-            //});
+           
         }
     }
 }

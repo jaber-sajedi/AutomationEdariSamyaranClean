@@ -1,5 +1,9 @@
 ﻿using AutomationEdariSamyaran.API;
+using AutomationEdariSamyaran.API.Filters;
+using AutomationEdariSamyaran.API.Middleware;
+using AutomationEdariSamyaran.Application.Behaviors;
 using AutomationEdariSamyaran.Application.Contracts;
+using AutomationEdariSamyaran.Application.MediatR.Units.Queries;
 using AutomationEdariSamyaran.Application.MediatR.Users.Handler;
 using AutomationEdariSamyaran.Domain.Entities;
 using AutomationEdariSamyaran.Domain.Interfaces;
@@ -9,6 +13,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Reflection;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -47,7 +52,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
 // ---------------- MediatR ----------------
-builder.Services.AddMediatR(typeof(LoginQueryHandler).Assembly);
+builder.Services.AddMediatR(cfg =>
+{
+    // همه‌ی Handlerها در لایه Application رجیستر می‌شوند
+    cfg.RegisterServicesFromAssembly(typeof(AutomationEdariSamyaran.Application.AssemblyReference).Assembly);
+});
+
 
 // ---------------- Repository ----------------
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -84,6 +94,8 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionHandlingBehavior<,>));
+
 // ---------------- CORS ----------------
 builder.Services.AddCors(options =>
 {
@@ -97,6 +109,10 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<CustomExceptionFilter>();
+});
 
 var app = builder.Build();
 
@@ -116,6 +132,7 @@ app.UseHttpsRedirection();
 app.UseCors("AllowReactApp");
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.MapControllers();
 

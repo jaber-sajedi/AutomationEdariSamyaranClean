@@ -8,7 +8,7 @@ namespace AutomationEdariSamyaran.Application.DTOs
 {
   public  class UserDto
     {
-        public string User_Name { get; set; }
+        public string UserName { get; set; }
         public string password { get; set; }
     }
 }

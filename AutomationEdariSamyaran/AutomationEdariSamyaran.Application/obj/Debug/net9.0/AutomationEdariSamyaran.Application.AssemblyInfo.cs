@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutomationEdariSamyaran.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f78b7690cfdc7af157e007d248df972c1ea6d29")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e758d98efe93df3ce5d3dacacc4c6497ce42ee38")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutomationEdariSamyaran.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutomationEdariSamyaran.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

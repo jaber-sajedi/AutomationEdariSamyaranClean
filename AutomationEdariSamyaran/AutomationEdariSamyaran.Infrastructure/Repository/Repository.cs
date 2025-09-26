@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace AutomationEdariSamyaran.Infrastructure.Repository
 {
-    
     public class Repository<T> : IRepository<T> where T : class
     {
         protected readonly AppDbContext _context;
@@ -29,12 +28,24 @@ namespace AutomationEdariSamyaran.Infrastructure.Repository
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await _dbSet.ToListAsync();
+            return await _dbSet
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate)
         {
-            return await _dbSet.Where(predicate).ToListAsync();
+            return await _dbSet
+                .AsNoTracking()
+                .Where(predicate)
+                .ToListAsync();
+        }
+
+        public async Task<T?> GetByIdNoTrackingAsync(int id)
+        {
+            return await _dbSet
+                .AsNoTracking()
+                .FirstOrDefaultAsync(e => EF.Property<int>(e, "ID") == id);
         }
 
         public async Task AddAsync(T entity)
@@ -67,5 +78,4 @@ namespace AutomationEdariSamyaran.Infrastructure.Repository
             return await _context.SaveChangesAsync();
         }
     }
-
 }
