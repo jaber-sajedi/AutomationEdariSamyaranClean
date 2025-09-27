@@ -54,6 +54,8 @@ namespace AutomationEdariSamyaran.Infrastructure.Persistence
         public virtual DbSet<TBL_Application_Setting> ApplicationSettings { get; set; }
         public virtual DbSet<TBL_User_Permission> TBL_User_Permissions { get; set; }
 
+      //  public DbSet<TBL_User_Permission> TBL_User_Permissions => Set<TBL_User_Permission>();
+     
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
