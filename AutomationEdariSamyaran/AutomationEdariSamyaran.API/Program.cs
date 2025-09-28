@@ -6,9 +6,9 @@ using AutomationEdariSamyaran.Application.Contracts;
 using AutomationEdariSamyaran.Application.MediatR.Units.Queries;
 using AutomationEdariSamyaran.Application.MediatR.Users.Handler;
 using AutomationEdariSamyaran.Domain.Entities;
-using AutomationEdariSamyaran.Domain.Interfaces;
+ 
 using AutomationEdariSamyaran.Infrastructure.Persistence;
-using AutomationEdariSamyaran.Infrastructure.Repository;
+ 
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -60,8 +60,8 @@ builder.Services.AddMediatR(cfg =>
 
 
 // ---------------- Repository ----------------
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+//builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+//builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // ---------------- Swagger ----------------
 builder.Services.AddEndpointsApiExplorer();
