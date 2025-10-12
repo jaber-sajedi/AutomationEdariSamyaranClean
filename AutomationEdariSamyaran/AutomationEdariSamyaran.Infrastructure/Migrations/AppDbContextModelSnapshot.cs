@@ -22,333 +22,24 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.ApplicationSetting", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Department", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Key")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Value")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ApplicationSettings");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Key = "BackupPath",
-                            Value = "C:\\Backup"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Key = "ApplicationName",
-                            Value = "اتوماسیون اداری سامیاران"
-                        });
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.ArchivesKoll", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ArchivesKolls");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.ArchivesMoein", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdKoll")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdKoll");
-
-                    b.ToTable("ArchivesMoeins");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.ArchivesTafzilli", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<byte[]>("AttachedFile")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("CreateAt")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdKoll")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdMoein")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NameTafzilly")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TemporaryDeletion")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdKoll");
-
-                    b.HasIndex("IdMoein");
-
-                    b.ToTable("ArchivesTafzillis");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.CellarKoll", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CellarKolls");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.CellarMoein", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdKoll")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdKoll");
-
-                    b.ToTable("CellarMoeins");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.CellarTafzilli", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdKoll")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdMoein")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdUnitsMeasurement")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdKoll");
-
-                    b.HasIndex("IdMoein");
-
-                    b.HasIndex("IdUnitsMeasurement");
-
-                    b.ToTable("CellarTafzillis");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.City", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("SectionId")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Id_State")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Id_State");
-
-                    b.ToTable("Cities");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.DailyReminderTask", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreateAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("Displayed")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("IdPersonal")
-                        .HasColumnType("int");
-
-                    b.Property<TimeSpan>("ReminderHour")
-                        .HasColumnType("time");
-
-                    b.Property<DateTime>("Reminderdate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Remindertext")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdPersonal");
-
-                    b.ToTable("DailyReminderTasks");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Greatadvice", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Advice")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Writername")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Greatadvices");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.LetterRecepiant", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("RecepiantName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("LetterRecepiants");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Letters", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<byte[]>("AttachedFile")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<DateTime?>("CreateAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DateOfView")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdLetterSubject")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdReceiveLetters")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdSendLetter")
-                        .HasColumnType("int");
-
-                    b.Property<string>("LetterNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("LetterType")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("TemporaryDeletion")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IdReceiveLetters");
-
-                    b.ToTable("Letters");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.OrganizationalRank", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("OrganRank")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrganizationalRanks");
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Personal", b =>
@@ -360,109 +51,95 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("ContractType")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("BankAccountNumber")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
-                    b.Property<DateTime>("DateOfBirth")
+                    b.Property<string>("BankName")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
+
+                    b.Property<string>("BirthCity")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("BirthDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("BirthProvince")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("EndJob")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Email")
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
-                    b.Property<string>("FatherName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("EmergencyContactPhone")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("FieldofStudy")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("EmploymentEndDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("FristName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("EmploymentStartDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int>("Gender")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdCity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdDegreeEducation")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdOrganRanks")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("IdState")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdUnit")
-                        .HasColumnType("int");
-
-                    b.Property<byte[]>("Image")
+                    b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("varbinary(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int?>("IdDepartment")
+                        .HasMaxLength(100)
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IdPosition")
+                        .HasMaxLength(100)
+                        .HasColumnType("int");
 
                     b.Property<string>("InsuranceNumber")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
-                    b.Property<int>("MaritalStatus")
-                        .HasColumnType("int");
+                    b.Property<string>("MaritalStatus")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Mobile")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("NationalCode")
-                        .HasColumnType("float");
-
-                    b.Property<int>("NumShenasname")
-                        .HasColumnType("int");
+                    b.Property<string>("NationalCode")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("NumberOfChildren")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OrganizationalRankId")
-                        .HasColumnType("int");
+                    b.Property<string>("PersonalCode")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("PersenelActive")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("PersonalCode")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Postalcode")
-                        .HasColumnType("int");
-
-                    b.Property<string>("StartJob")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Tell")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TemporaryDeletion")
-                        .HasColumnType("bit");
+                    b.Property<string>("Phone")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdCity");
+                    b.HasIndex("IdDepartment");
 
-                    b.HasIndex("IdOrganRanks");
+                    b.HasIndex("IdPosition");
 
-                    b.HasIndex("IdState");
+                    b.HasIndex("PersonalCode");
 
-                    b.HasIndex("IdUnit");
-
-                    b.HasIndex("OrganizationalRankId");
-
-                    b.ToTable("Personals");
+                    b.ToTable("Personals", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.PhoneBook", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Position", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -470,98 +147,21 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AddressHome")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AddressWorkplace")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Fax")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Homephone1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Homephone2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdPersonal")
-                        .HasColumnType("int");
-
-                    b.Property<string>("JobTitle")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Localphone1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Localphone2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Mobile1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Mobile2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Site")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Workphone1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Workphone2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WorkplaceName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdPersonal");
-
-                    b.ToTable("PhoneBooks");
+                    b.ToTable("Positions", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Seller", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("AdressSeller")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MobileSeller")
-                        .HasMaxLength(12)
-                        .HasColumnType("nvarchar(12)");
-
-                    b.Property<string>("NameSeller")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TellSeller")
-                        .HasMaxLength(15)
-                        .HasColumnType("nvarchar(15)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Sellers");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.State", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -570,14 +170,16 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("States");
+                    b.ToTable("Roles", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Units", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Workflow", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -585,15 +187,25 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("UnitName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Units");
+                    b.ToTable("Workflows", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Unitsmeasurement", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowInstance", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -601,157 +213,28 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("NameMeasurement")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("bit");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("UnitsMeasurements");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("PersonalId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreateAt")
+                    b.Property<DateTime>("StartedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("IdPersonal")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TemporaryDeletion")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("User_Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("password")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("WorkflowId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.HasIndex("PersonalId");
+
+                    b.HasIndex("WorkflowId");
+
+                    b.ToTable("WorkflowInstances", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.UserPermission", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<bool>("Archives")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("BackupRestore")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("BackupRoot")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CompanyInfo")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Goods")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("GoodsCircReport")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("GoodsDeparture")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("GoodsImpReport")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("GoodsImportation")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("GoodsRequest")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("GoodsRequests")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("IdPersonal")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("KolGoods")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("KollArchives")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("MoeinArchives")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("MoeinGoods")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("OrganizationalChart")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("OrganizationalRank")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("PersonalReport")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Personallist")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("ProductRequestMessage")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Publicmessages")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("RequestConfirmation")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("RequestLeave")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("RequestLeavemanagement")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("RequestList")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Seller")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("UnitsInformation")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("UnitsMeasurement")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("UserSettings")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("letterSendList")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("letterSubject")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("lettersDraft")
-                        .HasColumnType("bit");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("IdPersonal");
-
-                    b.ToTable("UserPermissions");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.YourNamespace.OrganizationalChart", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowInstanceStep", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -759,25 +242,33 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("HasAFather")
+                    b.Property<int?>("AssignedToId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CompletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsCompleted")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("IdFather")
+                    b.Property<int>("WorkflowInstanceId")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdOrgan_Rank")
+                    b.Property<int>("WorkflowStepId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdFather");
+                    b.HasIndex("AssignedToId");
 
-                    b.HasIndex("IdOrgan_Rank");
+                    b.HasIndex("WorkflowInstanceId");
 
-                    b.ToTable("OrganizationalCharts");
+                    b.HasIndex("WorkflowStepId");
+
+                    b.ToTable("WorkflowInstanceSteps", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.letterDraft", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowStep", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -785,275 +276,107 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<byte[]>("AttachedFile")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("FileName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FileType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("lettersTittel")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Draftletters");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.letterSubject", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("Order")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<int?>("RoleId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("SubjectName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("WorkflowId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("LetterSubjects");
-                });
+                    b.HasIndex("RoleId");
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.ArchivesMoein", b =>
-                {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.ArchivesKoll", "Koll")
-                        .WithMany("Moeins")
-                        .HasForeignKey("IdKoll")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasIndex("WorkflowId");
 
-                    b.Navigation("Koll");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.ArchivesTafzilli", b =>
-                {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.ArchivesKoll", "Koll")
-                        .WithMany("Tafzillis")
-                        .HasForeignKey("IdKoll")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.ArchivesMoein", "Moein")
-                        .WithMany("Tafzillis")
-                        .HasForeignKey("IdMoein")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Koll");
-
-                    b.Navigation("Moein");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.CellarMoein", b =>
-                {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.CellarKoll", "Koll")
-                        .WithMany("Moeins")
-                        .HasForeignKey("IdKoll")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Koll");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.CellarTafzilli", b =>
-                {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.CellarKoll", "Koll")
-                        .WithMany("Tafzillis")
-                        .HasForeignKey("IdKoll")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.CellarMoein", "Moein")
-                        .WithMany("Tafzillis")
-                        .HasForeignKey("IdMoein")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Unitsmeasurement", "UnitsMeasurement")
-                        .WithMany("Tafzillis")
-                        .HasForeignKey("IdUnitsMeasurement")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Koll");
-
-                    b.Navigation("Moein");
-
-                    b.Navigation("UnitsMeasurement");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.City", b =>
-                {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.State", "State")
-                        .WithMany("Cities")
-                        .HasForeignKey("Id_State")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("State");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.DailyReminderTask", b =>
-                {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Personal", "Personal")
-                        .WithMany("DailyReminders")
-                        .HasForeignKey("IdPersonal")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Personal");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Letters", b =>
-                {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.LetterRecepiant", "Recepiant")
-                        .WithMany("Letters")
-                        .HasForeignKey("IdReceiveLetters")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Recepiant");
+                    b.ToTable("WorkflowSteps", (string)null);
                 });
 
             modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Personal", b =>
                 {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.City", "City")
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Department", "Department")
                         .WithMany()
-                        .HasForeignKey("IdCity")
+                        .HasForeignKey("IdDepartment")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.OrganizationalRank", "organizationalRank")
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Position", "Position")
                         .WithMany()
-                        .HasForeignKey("IdOrganRanks")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.State", "State")
-                        .WithMany()
-                        .HasForeignKey("IdState")
+                        .HasForeignKey("IdPosition")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Units", "Units")
-                        .WithMany()
-                        .HasForeignKey("IdUnit")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                    b.Navigation("Department");
 
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.OrganizationalRank", null)
-                        .WithMany("Personals")
-                        .HasForeignKey("OrganizationalRankId");
-
-                    b.Navigation("City");
-
-                    b.Navigation("State");
-
-                    b.Navigation("Units");
-
-                    b.Navigation("organizationalRank");
+                    b.Navigation("Position");
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.PhoneBook", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowInstance", b =>
                 {
                     b.HasOne("AutomationEdariSamyaran.Domain.Entities.Personal", "Personal")
-                        .WithMany("PhoneBooks")
-                        .HasForeignKey("IdPersonal")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany()
+                        .HasForeignKey("PersonalId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Workflow", "Workflow")
+                        .WithMany()
+                        .HasForeignKey("WorkflowId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Personal");
+
+                    b.Navigation("Workflow");
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.UserPermission", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowInstanceStep", b =>
                 {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Personal", "Personal")
-                        .WithMany("UserPermissions")
-                        .HasForeignKey("IdPersonal")
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Personal", "AssignedTo")
+                        .WithMany()
+                        .HasForeignKey("AssignedToId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.WorkflowInstance", "WorkflowInstance")
+                        .WithMany()
+                        .HasForeignKey("WorkflowInstanceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Personal");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.YourNamespace.OrganizationalChart", b =>
-                {
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.YourNamespace.OrganizationalChart", "Father")
-                        .WithMany("Children")
-                        .HasForeignKey("IdFather")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.OrganizationalRank", "Rank")
-                        .WithMany("Charts")
-                        .HasForeignKey("IdOrgan_Rank")
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.WorkflowStep", "WorkflowStep")
+                        .WithMany()
+                        .HasForeignKey("WorkflowStepId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Father");
+                    b.Navigation("AssignedTo");
 
-                    b.Navigation("Rank");
+                    b.Navigation("WorkflowInstance");
+
+                    b.Navigation("WorkflowStep");
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.ArchivesKoll", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowStep", b =>
                 {
-                    b.Navigation("Moeins");
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
-                    b.Navigation("Tafzillis");
-                });
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Workflow", "Workflow")
+                        .WithMany()
+                        .HasForeignKey("WorkflowId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.ArchivesMoein", b =>
-                {
-                    b.Navigation("Tafzillis");
-                });
+                    b.Navigation("Role");
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.CellarKoll", b =>
-                {
-                    b.Navigation("Moeins");
-
-                    b.Navigation("Tafzillis");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.CellarMoein", b =>
-                {
-                    b.Navigation("Tafzillis");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.LetterRecepiant", b =>
-                {
-                    b.Navigation("Letters");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.OrganizationalRank", b =>
-                {
-                    b.Navigation("Charts");
-
-                    b.Navigation("Personals");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Personal", b =>
-                {
-                    b.Navigation("DailyReminders");
-
-                    b.Navigation("PhoneBooks");
-
-                    b.Navigation("UserPermissions");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.State", b =>
-                {
-                    b.Navigation("Cities");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Unitsmeasurement", b =>
-                {
-                    b.Navigation("Tafzillis");
-                });
-
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.YourNamespace.OrganizationalChart", b =>
-                {
-                    b.Navigation("Children");
+                    b.Navigation("Workflow");
                 });
 #pragma warning restore 612, 618
         }

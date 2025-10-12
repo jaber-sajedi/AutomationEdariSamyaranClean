@@ -9,14 +9,14 @@ namespace AutomationEdariSamyaran.API
     {
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
-            if (context.Type == typeof(LoginModel))
-            {
-                schema.Example = new OpenApiObject
-                {
-                    ["username"] = new OpenApiString("admin"),
-                    ["password"] = new OpenApiString("1234")
-                };
-            }
+            //if (context.Type == typeof(LoginModel))
+            //{
+            //    schema.Example = new OpenApiObject
+            //    {
+            //        ["username"] = new OpenApiString("admin"),
+            //        ["password"] = new OpenApiString("1234")
+            //    };
+            //}
         }
     }
 }

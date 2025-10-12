@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace AutomationEdariSamyaran.Domain.Entities
 {
-    public class WorkFlow
+    public class Workflow
     {
         [Key]
         public int Id { get; set; }
-        public string? NameWorkflow { get; set; }
+        public string Name { get; set; } = null!;
+        public string Description { get; set; } = null!;
+
+        // وضعیت فعال/غیر فعال
+        public bool IsActive { get; set; } = true;
     }
+
 }

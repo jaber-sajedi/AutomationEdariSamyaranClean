@@ -3,12 +3,9 @@ using AutomationEdariSamyaran.API.Filters;
 using AutomationEdariSamyaran.API.Middleware;
 using AutomationEdariSamyaran.Application.Behaviors;
 using AutomationEdariSamyaran.Application.Contracts;
-using AutomationEdariSamyaran.Application.MediatR.Units.Queries;
-using AutomationEdariSamyaran.Application.MediatR.Users.Handler;
 using AutomationEdariSamyaran.Domain.Entities;
  
 using AutomationEdariSamyaran.Infrastructure.Persistence;
- 
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -45,6 +42,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddAuthorization();
+
+builder.Services.AddSingleton<FileStorageService>();
+
 
 // ---------------- Database ----------------
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
