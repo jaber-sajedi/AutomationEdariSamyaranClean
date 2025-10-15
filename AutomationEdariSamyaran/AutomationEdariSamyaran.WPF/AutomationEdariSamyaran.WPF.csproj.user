@@ -5,7 +5,25 @@
     <Compile Update="Views\AccessTreeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Workflow\EditWorkflowStepView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Workflow\EditWorkflowView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PersonalFormView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\PersonalListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Workflow\WorkflowStepView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Workflow\WorkflowUCView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Workflow\WorkflowView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

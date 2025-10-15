@@ -14,6 +14,15 @@
     <PackageReference Include="MaterialDesignThemes" Version="5.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="RestSharp" Version="112.1.0" />
+    <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="112.1.0" />
+	  <PackageReference Include="Serilog" Version="4.3.0" />
+	  <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+	  <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+	  <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+	  <PackageReference Include="AutoMapper" Version="13.0.1" />
+	  <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
+	  <PackageReference Include="Mohsen.PersianDateControls" Version="1.0.1" />
+
   </ItemGroup>
 
   <ItemGroup>

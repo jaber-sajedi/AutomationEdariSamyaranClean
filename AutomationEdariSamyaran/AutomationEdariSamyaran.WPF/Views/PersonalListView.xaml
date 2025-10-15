@@ -4,27 +4,57 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:md="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:md="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" 
+             xmlns:vm="clr-namespace:AutomationEdariSamyaran.WPF.ViewModels"
              mc:Ignorable="d"
              FlowDirection="RightToLeft"
-             FontFamily="Tahoma">
+               FontFamily="{StaticResource MyFontName}"  BorderBrush="LightGray" BorderThickness="2">
 
-    <DockPanel Margin="10">
+
+    <UserControl.DataContext>
+        <vm:PersonalListViewModel />
+    </UserControl.DataContext>
+
+
+    <DockPanel Margin="10" >
 
         <!-- بخش جستجو -->
         
 
         <!-- دکمه‌ها -->
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="0,0,0,10">
-            <TextBox Width="200" Margin="5"  
-          Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
-            <Button Content="جستجو" Command="{Binding SearchCommand}" Style="{StaticResource MaterialDesignRaisedButton}" Margin="5"/>
-            <Button Content="جدید" Command="{Binding AddCommand}" Style="{StaticResource MaterialDesignRaisedButton}" Margin="5"/>
-            <Button Content="ویرایش" Command="{Binding EditCommand}" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="5"/>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top"  Margin="0,0,0,10"  >
+            <Grid>
+                <!-- تعریف ردیف‌ها -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- تعریف ستون‌ها -->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Border Grid.Row="0" Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" >
+                    <DockPanel>
+                        <TextBox Width="200" Margin="5"   Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
+                        <Button Content="جستجو" Command="{Binding SearchCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5"/>
+                    </DockPanel>
+
+                </Border>
+                <Button Grid.Row="0" Grid.Column="1" Content="جدید" Command="{Binding AddCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="2"  Content="ویرایش" Command="{Binding EditCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5"/>
+            </Grid>
+
+           
+           
         </StackPanel>
 
         <!-- DataGrid -->
-        <DataGrid ItemsSource="{Binding FilteredPersonals}" SelectedItem="{Binding SelectedPersonal}" AutoGenerateColumns="False"
+        <DataGrid ItemsSource="{Binding Personals}" SelectedItem="{Binding SelectedPersonal}" AutoGenerateColumns="False"  IsReadOnly="True"
                   CanUserAddRows="False" CanUserDeleteRows="False"
                 
                   GridLinesVisibility="Horizontal" Margin="0,0,0,0">

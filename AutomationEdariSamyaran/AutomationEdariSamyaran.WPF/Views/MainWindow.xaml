@@ -1,4 +1,4 @@
-﻿<Window x:Class="AutomationEdariSamyaran.WPF.MainWindow"
+﻿<Window x:Class="AutomationEdariSamyaran.WPF.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -16,7 +16,7 @@
         FlowDirection="RightToLeft"
         Language="fa-IR"
         FontFamily="Tahoma"
-        materialDesign:ColorZoneAssist.Mode="PrimaryDark">
+        materialDesign:ColorZoneAssist.Mode="PrimaryDark" WindowState="Maximized">
     
     <Window.DataContext>
         <vm:MainViewModel />
@@ -32,19 +32,21 @@
                     FlowDirection="RightToLeft">
 
             <!-- تب خانه -->
-            <TabItem Header="خانه">
-                <StackPanel Orientation="Horizontal" Margin="5">
-                    <Button Command="{Binding NewPersonalCommand}" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="5"  >
+            <TabItem Header="اطلاعات پایه" >
+                <StackPanel Orientation="Horizontal" Margin="5"> 
+                    <Button Command="{Binding SelectActionCommand}"
+        CommandParameter="PersonalList"
+        Style="{StaticResource MaterialDesignOutlinedButton}" Margin="5">
                         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" HorizontalAlignment="Right">
                             <icon:PackIcon Kind="FolderOpenOutline" Width="20" Height="20" Margin="5,0,0,0"/>
                             <TextBlock Text="لیست پرسنل"/>
                         </StackPanel>
                     </Button>
 
-                    <Button Command="{Binding OpenCommand}" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="5">
+                    <Button Command="{Binding SelectActionCommand}" CommandParameter="OpenWorkflow" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="5">
                         <StackPanel Orientation="Horizontal">
                             <icon:PackIcon Kind="FolderOpenOutline" Width="20" Height="20" Margin="5,0,0,0"/>
-                            <TextBlock Text="باز کردن" />
+                            <TextBlock Text="جریان کاری" />
                         </StackPanel>
                     </Button>
 
@@ -86,8 +88,8 @@
         </TabControl>
 
         <!-- محتوای اصلی -->
-        <Border Margin="10" CornerRadius="8" md:ElevationAssist.Elevation="Dp4">
-            <ContentControl Content="{Binding CurrentView}" />
+        <Border Margin="10" CornerRadius="8" md:ElevationAssist.Elevation="Dp4" >
+            <ContentControl Content="{Binding CurrentView}"  />
         </Border>
 
 

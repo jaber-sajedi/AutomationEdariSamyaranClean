@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using AutomationEdariSamyaran.WPF.Services;
+using AutomationEdariSamyaran.WPF.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -9,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AutomationEdariSamyaran.WPF
+namespace AutomationEdariSamyaran.WPF.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -19,6 +21,7 @@ namespace AutomationEdariSamyaran.WPF
         public MainWindow()
         {
             InitializeComponent();
+ 
         }
     }
 }

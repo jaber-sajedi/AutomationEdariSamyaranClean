@@ -9,14 +9,19 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <!-- تم اصلی -->
-                <materialDesign:BundledTheme BaseTheme="Dark"
+                <materialDesign:BundledTheme BaseTheme="Light"
                                          PrimaryColor="BlueGrey"
                                          SecondaryColor="Amber" />
 
                 <!-- Defaults نسخه 5 -->
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <FontFamily x:Key="MyFontName">/InternetMoneyTransfer;component/ViewModels/Fonts/Vazir-Medium.ttf</FontFamily>
+       
+            
         </ResourceDictionary>
+        
+        
     </Application.Resources>
 
 </Application>
