@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET9_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\App.xaml
-92010395025
+10-1355761172
 22-197051814
-33-1201545830
-224-1304230541
-Views\AccessTreeView.xaml;Views\MainWindow.xaml;Views\PersonalFormView.xaml;Views\PersonalListView.xaml;Views\Workflow\EditWorkflowStepView.xaml;Views\Workflow\EditWorkflowView.xaml;Views\Workflow\WorkflowStepView.xaml;Views\Workflow\WorkflowUCView.xaml;Views\Workflow\WorkflowView.xaml;
+37949554316
+2292136720067
+Views\AccessTreeView.xaml;Views\MainWindow.xaml;Views\PersonalFormView.xaml;Views\PersonalListView.xaml;Views\RollUCView.xaml;Views\Workflow\EditWorkflowStepView.xaml;Views\Workflow\EditWorkflowView.xaml;Views\Workflow\WorkflowStepView.xaml;Views\Workflow\WorkflowUCView.xaml;Views\Workflow\WorkflowView.xaml;
 
 False
 

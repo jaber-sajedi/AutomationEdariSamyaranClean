@@ -19,6 +19,7 @@
             <FontFamily x:Key="MyFontName">/InternetMoneyTransfer;component/ViewModels/Fonts/Vazir-Medium.ttf</FontFamily>
        
             
+            
         </ResourceDictionary>
         
         

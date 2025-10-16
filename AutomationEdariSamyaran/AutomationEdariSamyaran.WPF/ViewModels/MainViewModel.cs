@@ -4,6 +4,7 @@ using AutomationEdariSamyaran.WPF.Views;
 using AutomationEdariSamyaran.WPF.Views.Workflow;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MaterialDesignThemes.Wpf;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -18,17 +19,28 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
 
         [ObservableProperty]
         private UserControl currentView;
-        public RelayCommand<string> SelectActionCommand { get; }
+        public AsyncRelayCommand<string> SelectActionCommand { get; }
+
+        [ObservableProperty]
+        private bool isBusy;
+        [ObservableProperty]
+        private string busyMessage = "در حال بارگذاری...";
+
         public MainViewModel()
         {
             _apiService = new RestApiService();
-            SelectActionCommand = new RelayCommand<string>(SelectAction);
+            SelectActionCommand = new AsyncRelayCommand<string>(SelectActionAsync);
         }
-       
 
-        // این متد Command اصلی است
-        public void SelectAction(string action)
+
+        private async Task SelectActionAsync(string action)
         {
+            IsBusy = true;
+            BusyMessage = "در حال بارگذاری داده‌ها...";
+
+            // شبیه‌سازی عملیات طولانی
+            await Task.Delay(1000);
+
             SelectedAction = action;
 
             switch (action)
@@ -37,33 +49,25 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
                     CurrentView = new Views.PersonalListView();
                     break;
 
-             
                 case "OpenWorkflow":
-                    {
-                        var vm = new WorkflowViewModel(_apiService);
-                        var window = new WorkflowUCView
-                        {
-                            DataContext = vm
-                        };
-                        CurrentView = window;
-                    }
+                    var workflowVm = new WorkflowViewModel(_apiService);
+                    var workflowView = new WorkflowUCView { DataContext = workflowVm };
+                    CurrentView = workflowView;
                     break;
-                // case "Cut":
-                //     CurrentView = new Views.CutView();
-                //     break;
-                // case "Copy":
-                //     CurrentView = new Views.CopyView();
-                //     break;
-                // case "Paste":
-                //     CurrentView = new Views.PasteView();
-                //     break;
+
+                case "OpenRoleList":
+                    var rollVm = new RollUCViewModel(_apiService);
+                    var rollView = new RollUCView(_apiService) { DataContext = rollVm };
+                    CurrentView = rollView;
+                    break;
 
                 default:
                     CurrentView = new Views.AccessTreeView();
                     break;
             }
-        }
 
+            IsBusy = false;
+        }
 
         //[RelayCommand]
         //private void EditWorkflow(WorkflowDto selectedWorkflow)
@@ -93,5 +97,7 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
             };
             window.Show(); // مستقل باز می‌شود
         }
+
+
     }
 }

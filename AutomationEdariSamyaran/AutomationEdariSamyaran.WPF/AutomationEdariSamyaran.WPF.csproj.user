@@ -17,6 +17,9 @@
     <Compile Update="Views\PersonalListView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\RollUCView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Workflow\WorkflowStepView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

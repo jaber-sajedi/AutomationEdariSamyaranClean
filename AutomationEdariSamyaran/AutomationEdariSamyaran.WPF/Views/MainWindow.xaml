@@ -9,6 +9,7 @@
         xmlns:md="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
         xmlns:icon="http://materialdesigninxaml.net/winfx/xaml/themes"
          xmlns:vm="clr-namespace:AutomationEdariSamyaran.WPF.ViewModels"
+        xmlns:local1="clr-namespace:AutomationEdariSamyaran.WPF.Converter"
         mc:Ignorable="d"
         Title="اتوماسیون اداری سمیاران"
         Height="600" Width="1000"
@@ -21,6 +22,9 @@
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <local1:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     
     <DockPanel FlowDirection="RightToLeft">
 
@@ -50,10 +54,10 @@
                         </StackPanel>
                     </Button>
 
-                    <Button Command="{Binding SaveCommand}" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="5">
+                    <Button Command="{Binding SelectActionCommand}" CommandParameter="OpenRoleList" Style="{StaticResource MaterialDesignOutlinedButton}" Margin="5">
                         <StackPanel Orientation="Horizontal">
                             <icon:PackIcon Kind="ContentSaveOutline" Width="20" Height="20" Margin="5,0,0,0"/>
-                            <TextBlock Text="ذخیره" />
+                            <TextBlock Text="مدیریت نقش" />
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -89,7 +93,25 @@
 
         <!-- محتوای اصلی -->
         <Border Margin="10" CornerRadius="8" md:ElevationAssist.Elevation="Dp4" >
-            <ContentControl Content="{Binding CurrentView}"  />
+            <Grid>
+                <!-- محتوای اصلی -->
+                <ContentControl Content="{Binding CurrentView}" />
+
+                <!-- Busy Overlay حرفه‌ای -->
+                <Grid Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}"
+      Background="#CCFFFFFF">
+                    <Grid.Effect>
+                        <BlurEffect Radius="2"/>
+                    </Grid.Effect>
+
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+                        <ProgressBar Width="150" Height="20" IsIndeterminate="True" Foreground="DarkBlue"/>
+                        <TextBlock Text="{Binding BusyMessage}" Margin="10" FontSize="16"
+                   HorizontalAlignment="Center" Foreground="Black"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
         </Border>
 
 

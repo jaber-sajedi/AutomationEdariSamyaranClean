@@ -8,66 +8,115 @@
              xmlns:vm="clr-namespace:AutomationEdariSamyaran.WPF.ViewModels"
              mc:Ignorable="d"
              FlowDirection="RightToLeft"
-               FontFamily="{StaticResource MyFontName}"  BorderBrush="LightGray" BorderThickness="2">
+             FontFamily="{StaticResource MyFontName}"  
+             BorderBrush="LightGray" BorderThickness="2">
 
-
+    <!-- ViewModel -->
     <UserControl.DataContext>
         <vm:PersonalListViewModel />
     </UserControl.DataContext>
 
+    <!-- ساختار کلی -->
+    <Grid Margin="10">
 
-    <DockPanel Margin="10" >
+        <!-- تعریف ردیف‌ها -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- نوار دکمه‌ها -->
+            <RowDefinition Height="Auto"/>
+            <!-- گرید -->
+        </Grid.RowDefinitions>
 
-        <!-- بخش جستجو -->
-        
+        <!-- ✅ سطر ۱ : دکمه‌ها و سرچ -->
+        <Border Grid.Row="0" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" Margin="0,0,0,10">
+            <DockPanel LastChildFill="False" Margin="5">
 
-        <!-- دکمه‌ها -->
-        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top"  Margin="0,0,0,10"  >
-            <Grid>
-                <!-- تعریف ردیف‌ها -->
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
+                <!-- عنوان -->
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" VerticalAlignment="Center">
+                    <materialDesign:PackIcon Kind="PersonMultipleTick" Width="22" Height="22" Foreground="Black" />
+                    <TextBlock Text="لیست پرسنل" Margin="5,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                </StackPanel>
 
-                <!-- تعریف ستون‌ها -->
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+                <!-- جستجو -->
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Left" Margin="10,0,0,0">
+                    <TextBox Width="200" Margin="5"
+                             materialDesign:HintAssist.Hint="جستجو..."
+                             Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
 
+                    <Button Command="{Binding SearchCommand}"
+                            Margin="5"
+                            Background="White" BorderBrush="DarkKhaki" Foreground="DarkKhaki"
+                            Style="{StaticResource MaterialDesignOutlinedButton}" Width="120" Height="36">
+                        <DockPanel>
+                            <materialDesign:PackIcon Kind="CarFind" Width="20" Height="20" Foreground="DarkKhaki"/>
+                            <TextBlock Text="جستجو" Margin="5,0,0,0"/>
+                        </DockPanel>
+                    </Button>
 
-                <Border Grid.Row="0" Grid.Column="0" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray" >
-                    <DockPanel>
-                        <TextBox Width="200" Margin="5"   Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" />
-                        <Button Content="جستجو" Command="{Binding SearchCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5"/>
-                    </DockPanel>
+                    <Button Command="{Binding AddCommand}"
+                            Margin="5"
+                            Background="White" BorderBrush="Green" Foreground="Green"
+                            Style="{StaticResource MaterialDesignOutlinedButton}" Width="120" Height="36">
+                        <DockPanel>
+                            <materialDesign:PackIcon Kind="PersonAdd" Width="20" Height="20" Foreground="Green"/>
+                            <TextBlock Text="جدید" Margin="5,0,0,0"/>
+                        </DockPanel>
+                    </Button>
+                </StackPanel>
 
-                </Border>
-                <Button Grid.Row="0" Grid.Column="1" Content="جدید" Command="{Binding AddCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5"/>
-                <Button Grid.Row="0" Grid.Column="2"  Content="ویرایش" Command="{Binding EditCommand}" Style="{StaticResource MaterialDesignRaisedLightButton}" Margin="5"/>
-            </Grid>
+            </DockPanel>
+        </Border>
 
-           
-           
-        </StackPanel>
+        <!-- ✅ سطر ۲ : گرید -->
+        <Border Grid.Row="1" CornerRadius="5" BorderThickness="1" BorderBrush="LightGray">
+            <DataGrid ItemsSource="{Binding Personals}" 
+                      SelectedItem="{Binding SelectedPersonal}"
+                      AutoGenerateColumns="False" 
+                      IsReadOnly="True"
+                      CanUserAddRows="False" 
+                      CanUserDeleteRows="False"
+                      GridLinesVisibility="Horizontal" 
+                      Margin="5"   FontFamily="{StaticResource MyFontName}" 
+                      >
 
-        <!-- DataGrid -->
-        <DataGrid ItemsSource="{Binding Personals}" SelectedItem="{Binding SelectedPersonal}" AutoGenerateColumns="False"  IsReadOnly="True"
-                  CanUserAddRows="False" CanUserDeleteRows="False"
-                
-                  GridLinesVisibility="Horizontal" Margin="0,0,0,0">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="نام کامل" Binding="{Binding FullName}" Width="*" />
-                <DataGridTextColumn Header="کد پرسنلی" Binding="{Binding PersonalCode}" Width="*" />
-                <DataGridTextColumn Header="واحد / دپارتمان" Binding="{Binding Department.Name}" Width="*" />
-                <DataGridTextColumn Header="پست" Binding="{Binding Position.Name}" Width="*" />
-                <DataGridTextColumn Header="ایمیل" Binding="{Binding Email}" Width="*" />
-                <DataGridTextColumn Header="تلفن" Binding="{Binding Phone}" Width="*" />
-                <DataGridCheckBoxColumn Header="فعال" Binding="{Binding IsActive}" Width="Auto" />
-            </DataGrid.Columns>
-        </DataGrid>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="نام کامل" Binding="{Binding FullName}" Width="*" />
+                    <DataGridTextColumn Header="کد پرسنلی" Binding="{Binding PersonalCode}" Width="*" />
+                    <DataGridTextColumn Header="واحد / دپارتمان" Binding="{Binding Department.Name}" Width="*" />
+                    <DataGridTextColumn Header="پست" Binding="{Binding Position.Name}" Width="*" />
+                    <DataGridTextColumn Header="ایمیل" Binding="{Binding Email}" Width="*" />
+                    <DataGridTextColumn Header="تلفن" Binding="{Binding Phone}" Width="*" />
+                    <DataGridCheckBoxColumn Header="فعال" Binding="{Binding IsActive}" Width="Auto" />
 
-    </DockPanel>
+                    <!-- دکمه ویرایش -->
+                    <DataGridTemplateColumn Header="ویرایش" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="ویرایش"
+                                        Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding}"
+                                        Style="{StaticResource MaterialDesignOutlinedButton}"
+                                        Background="White" BorderBrush="Blue" Foreground="Blue"  />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- دکمه حذف -->
+                    <DataGridTemplateColumn Header="حذف" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="حذف"
+                                        Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding}"
+                                        Style="{StaticResource MaterialDesignOutlinedButton}"
+                                        Background="White" BorderBrush="#D32F2F" Foreground="#D32F2F"  />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+    </Grid>
 </UserControl>

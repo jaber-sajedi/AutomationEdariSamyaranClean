@@ -21,7 +21,6 @@ namespace AutomationEdariSamyaran.WPF.Views
         public MainWindow()
         {
             InitializeComponent();
- 
         }
     }
 }
