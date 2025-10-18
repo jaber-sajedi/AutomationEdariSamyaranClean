@@ -4,7 +4,6 @@ using AutomationEdariSamyaran.API.Middleware;
 using AutomationEdariSamyaran.Application.Behaviors;
 using AutomationEdariSamyaran.Application.Contracts;
 using AutomationEdariSamyaran.Domain.Entities;
- 
 using AutomationEdariSamyaran.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -12,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,9 +42,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddAuthorization();
-
 builder.Services.AddSingleton<FileStorageService>();
-
 
 // ---------------- Database ----------------
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -54,10 +52,17 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // ---------------- MediatR ----------------
 builder.Services.AddMediatR(cfg =>
 {
-    // همه‌ی Handlerها در لایه Application رجیستر می‌شوند
     cfg.RegisterServicesFromAssembly(typeof(AutomationEdariSamyaran.Application.AssemblyReference).Assembly);
 });
 
+// ---------------- FluentValidation ----------------
+// همه Validatorها از Assembly مربوطه شناسایی و ثبت می‌شوند
+builder.Services.AddValidatorsFromAssembly(typeof(AutomationEdariSamyaran.Application.AssemblyReference).Assembly);
+
+// ---------------- Pipeline Behaviors ----------------
+// اول ValidationBehavior بعد ExceptionHandlingBehavior
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionHandlingBehavior<,>));
 
 // ---------------- Repository ----------------
 //builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -94,8 +99,6 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionHandlingBehavior<,>));
-
 // ---------------- CORS ----------------
 builder.Services.AddCors(options =>
 {
@@ -107,12 +110,12 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddControllers();
-builder.Services.AddHttpClient();
+// ---------------- Controllers ----------------
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<CustomExceptionFilter>();
 });
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
@@ -123,7 +126,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-        c.RoutePrefix = string.Empty; // 🔑 این باعث میشه Swagger روی روت باز بشه
+        c.RoutePrefix = string.Empty; // 🔑 Swagger روی روت
     });
 }
 
@@ -134,6 +137,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseMiddleware<ExceptionMiddleware>();
 
+// ---------------- Map Controllers ----------------
 app.MapControllers();
 
 app.Run();

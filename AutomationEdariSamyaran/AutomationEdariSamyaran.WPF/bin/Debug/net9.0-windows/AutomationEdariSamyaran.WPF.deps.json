@@ -11,6 +11,7 @@
           "AutoMapper": "13.0.1",
           "CommunityToolkit.Mvvm": "8.4.0",
           "Extended.Wpf.Toolkit": "5.0.0",
+          "FluentValidation": "12.0.0",
           "MaterialDesignColors": "5.3.0",
           "MaterialDesignThemes": "5.3.0",
           "Microsoft.Xaml.Behaviors.Wpf": "1.1.135",
@@ -105,6 +106,14 @@
           },
           "lib/net5.0/zh-Hans/Xceed.Wpf.AvalonDock.resources.dll": {
             "locale": "zh-Hans"
+          }
+        }
+      },
+      "FluentValidation/12.0.0": {
+        "runtime": {
+          "lib/net8.0/FluentValidation.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.0.0"
           }
         }
       },
@@ -371,6 +380,13 @@
       "sha512": "sha512-8QStq5cQd+anGBbA5XXSlb/BxEk457xRQ/vraLXNvf5fHG1b4Bu4DOkvSqvvu9MLRUf+q29ceWsLRGtAw3CzDg==",
       "path": "extended.wpf.toolkit/5.0.0",
       "hashPath": "extended.wpf.toolkit.5.0.0.nupkg.sha512"
+    },
+    "FluentValidation/12.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8NVLxtMUXynRHJIX3Hn1ACovaqZIJASufXIIFkD0EUbcd5PmMsL1xUD5h548gCezJ5BzlITaR9CAMrGe29aWpA==",
+      "path": "fluentvalidation/12.0.0",
+      "hashPath": "fluentvalidation.12.0.0.nupkg.sha512"
     },
     "MaterialDesignColors/5.3.0": {
       "type": "package",

@@ -13,7 +13,7 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
         private readonly RestApiService _api;
 
         [ObservableProperty]
-        private ObservableCollection<AccessItem> accessItems = new();
+        private ObservableCollection<AccessItem> _accessItems = new();
 
         public AccessTreeViewModel()
         {

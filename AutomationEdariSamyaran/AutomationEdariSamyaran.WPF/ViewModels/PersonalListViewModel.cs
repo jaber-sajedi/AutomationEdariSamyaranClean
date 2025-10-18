@@ -12,10 +12,10 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
     public partial class PersonalListViewModel : ObservableObject
     {
         [ObservableProperty]
-        private ObservableCollection<PersonalDto> personals = new();
+        private ObservableCollection<PersonalDto> _personals = new();
 
         [ObservableProperty]
-        private PersonalDto selectedPersonal;
+        private PersonalDto _selectedPersonal;
 
         private readonly RestApiService _apiService;
         public PersonalListViewModel()

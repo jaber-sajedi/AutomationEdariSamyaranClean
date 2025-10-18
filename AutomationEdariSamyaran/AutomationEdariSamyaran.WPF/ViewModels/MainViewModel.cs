@@ -15,16 +15,16 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
         private readonly RestApiService _apiService;
 
         [ObservableProperty]
-        private string selectedAction;
+        private string _selectedAction;
 
         [ObservableProperty]
-        private UserControl currentView;
+        private UserControl _currentView;
         public AsyncRelayCommand<string> SelectActionCommand { get; }
 
         [ObservableProperty]
-        private bool isBusy;
+        private bool _isBusy;
         [ObservableProperty]
-        private string busyMessage = "در حال بارگذاری...";
+        private string _busyMessage = "در حال بارگذاری...";
 
         public MainViewModel()
         {
@@ -38,9 +38,6 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
             IsBusy = true;
             BusyMessage = "در حال بارگذاری داده‌ها...";
 
-            // شبیه‌سازی عملیات طولانی
-            await Task.Delay(1000);
-
             SelectedAction = action;
 
             switch (action)
@@ -51,13 +48,13 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
 
                 case "OpenWorkflow":
                     var workflowVm = new WorkflowViewModel(_apiService);
-                    var workflowView = new WorkflowUCView { DataContext = workflowVm };
+                    var workflowView = new WorkflowUcView { DataContext = workflowVm };
                     CurrentView = workflowView;
                     break;
 
                 case "OpenRoleList":
-                    var rollVm = new RollUCViewModel(_apiService);
-                    var rollView = new RollUCView(_apiService) { DataContext = rollVm };
+                    var rollVm = new RollUcViewModel(_apiService);
+                    var rollView = new RollUcView(_apiService) { DataContext = rollVm };
                     CurrentView = rollView;
                     break;
 
@@ -86,17 +83,7 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
         //}
 
 
-
-        [RelayCommand]
-        public void OpenWorkflowView()
-        {
-            var vm = new WorkflowViewModel(_apiService);
-            var window = new WorkflowView
-            {
-                DataContext = vm
-            };
-            window.Show(); // مستقل باز می‌شود
-        }
+ 
 
 
     }

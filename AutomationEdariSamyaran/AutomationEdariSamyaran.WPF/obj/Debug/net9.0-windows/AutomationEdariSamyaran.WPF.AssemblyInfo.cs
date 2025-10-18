@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutomationEdariSamyaran.WPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d5c457de9ddbe07f3565849d0a7ee156fbba4a0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0333f2c2434cd8d65769ca67db8d3eb157987b34")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutomationEdariSamyaran.WPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutomationEdariSamyaran.WPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
