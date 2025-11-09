@@ -1,0 +1,176 @@
+[
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.PersonalController",
+    "Method": "Create",
+    "RelativePath": "api/Personal/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "AutomationEdariSamyaran.Application.MediatR.Personal.Command.CreatePersonalCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.PersonalController",
+    "Method": "GetAll",
+    "RelativePath": "api/Personal/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.RollController",
+    "Method": "Create",
+    "RelativePath": "api/Roll/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "AutomationEdariSamyaran.Application.MediatR.Role.Command.CreateRollCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.RollController",
+    "Method": "GetById",
+    "RelativePath": "api/Roll/get-by-id",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "AutomationEdariSamyaran.Application.MediatR.Role.Query.GetRollByIdQuery",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.RollController",
+    "Method": "GetAll",
+    "RelativePath": "api/Roll/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.WorkflowController",
+    "Method": "Create",
+    "RelativePath": "api/Workflow/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "AutomationEdariSamyaran.Application.MediatR.Workflow.Command.CreateWorkflowCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.WorkflowController",
+    "Method": "GetAll",
+    "RelativePath": "api/Workflow/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.WorkflowExecutionController",
+    "Method": "CompleteStep",
+    "RelativePath": "api/WorkflowExecution/complete-step",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "AutomationEdariSamyaran.Application.MediatR.CompleteWorkflowStep.Command.CompleteWorkflowStepCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.WorkflowInstanceController",
+    "Method": "Start",
+    "RelativePath": "api/WorkflowInstance/start",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "AutomationEdariSamyaran.Application.MediatR.StartWorkflowInstance.Command.StartWorkflowInstanceCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.WorkflowInstanceController",
+    "Method": "GetSteps",
+    "RelativePath": "api/WorkflowInstance/steps/{instanceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "instanceId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.WorkflowStepController",
+    "Method": "Create",
+    "RelativePath": "api/WorkflowStep/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "AutomationEdariSamyaran.Application.MediatR.WorkflowStep.Command.CreateWorkflowStepCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutomationEdariSamyaran.API.Controllers.WorkflowStepController",
+    "Method": "GetByWorkflow",
+    "RelativePath": "api/WorkflowStep/get-by-workflow/{workflowId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "workflowId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

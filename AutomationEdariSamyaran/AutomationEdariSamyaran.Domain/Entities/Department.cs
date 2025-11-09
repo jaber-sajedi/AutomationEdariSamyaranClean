@@ -14,7 +14,6 @@ namespace AutomationEdariSamyaran.Domain.Entities
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public int SectionId { get; set; }
-      //  public Section Section { get; set; } = null!;
-       // public ICollection<Employee> Employees { get; set; } = new List<Employee>();
+        public Section? Section { get; set; } = null!;
     }
 }

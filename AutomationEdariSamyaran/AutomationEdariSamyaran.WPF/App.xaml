@@ -16,7 +16,7 @@
                 <!-- Defaults نسخه 5 -->
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <FontFamily x:Key="MyFontName">/InternetMoneyTransfer;component/ViewModels/Fonts/Vazir-Medium.ttf</FontFamily>
+            <FontFamily x:Key="MyFontName">/AutomationEdariSamyaran.WPF;component/ViewModels/Fonts/Vazir-Medium.ttf</FontFamily>
        
             
             

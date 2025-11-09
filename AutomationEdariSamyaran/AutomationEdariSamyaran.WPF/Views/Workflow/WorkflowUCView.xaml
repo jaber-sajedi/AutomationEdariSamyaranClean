@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="AutomationEdariSamyaran.WPF.Views.Workflow.WorkflowUcView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AutomationEdariSamyaran.WPF.Views.Workflow"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" FlowDirection="RightToLeft">
+    
+    <Grid Margin="10">
+        <StackPanel>
+            <!-- دکمه افزودن Workflow -->
+            <Button Command="{Binding AddWorkflowCommand}" HorizontalAlignment="Left"
+                    Margin="5"
+                    Background="White" BorderBrush="Green" Foreground="Green"
+                    Style="{StaticResource MaterialDesignOutlinedButton}" Width="120" Height="36">
+                <DockPanel>
+                    <materialDesign:PackIcon Kind="Workflow" Width="20" Height="20" Foreground="Green"/>
+                    <TextBlock Text="جدید" Margin="5,0,0,0"/>
+                </DockPanel>
+            </Button>
+            <!-- لیست Workflowها -->
+            <DataGrid ItemsSource="{Binding Workflows}" AutoGenerateColumns="False" SelectedItem="{Binding SelectedWorkflow}"  CanUserAddRows="False" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="نام Workflow" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="توضیحات" Binding="{Binding Description}" Width="2*"/>
+
+                    <DataGridTemplateColumn Header="عملیات" Width="300">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="ویرایش"
+                                            Command="{Binding DataContext.EditWorkflowCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource MaterialDesignOutlinedButton}"
+                                            Background="White" BorderBrush="Blue" Foreground="Blue" Margin="2"/>
+
+                                    <Button Content="Stepها"
+                                            Command="{Binding DataContext.ShowStepsCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource MaterialDesignOutlinedButton}"
+                                            Background="White" BorderBrush="Brown" Foreground="Brown" Margin="2"/>
+
+                                    <Button Content="حذف"
+                                            Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                            CommandParameter="{Binding}"
+                                            Style="{StaticResource MaterialDesignOutlinedButton}"
+                                            Background="White" BorderBrush="#D32F2F" Foreground="#D32F2F" Margin="2" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+</DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</UserControl>

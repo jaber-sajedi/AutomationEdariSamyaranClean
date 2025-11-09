@@ -5,6 +5,9 @@
     <Compile Update="Views\AccessTreeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SearchDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Workflow\EditWorkflowStepView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -82,3 +82,9 @@ D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\bin\Debug\net9.0-windows\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\bin\Debug\net9.0-windows\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\bin\Debug\net9.0-windows\FluentValidation.dll
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\obj\Debug\net9.0-windows\Views\MessageBox\CustomMeesageBox.g.cs
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\obj\Debug\net9.0-windows\Views\MessageBox\QuestionMeesageBox.g.cs
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\obj\Debug\net9.0-windows\Views\MessageBox\CustomMeesageBox.baml
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\obj\Debug\net9.0-windows\Views\MessageBox\QuestionMeesageBox.baml
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\obj\Debug\net9.0-windows\Views\SearchDialog.g.cs
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.WPF\obj\Debug\net9.0-windows\Views\SearchDialog.baml

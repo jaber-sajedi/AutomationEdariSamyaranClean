@@ -1,15 +1,40 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.domain\\entities\\workflow\\workflowinstancestep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|solutionrelative:automationedarisamyaran.domain\\entities\\workflow\\workflowinstancestep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|solutionrelative:automationedarisamyaran.domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.domain\\entities\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|solutionrelative:automationedarisamyaran.domain\\entities\\personal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.domain\\entities\\workflow\\workflowstep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|solutionrelative:automationedarisamyaran.domain\\entities\\workflow\\workflowstep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.domain\\entities\\workflow\\workflowinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|solutionrelative:automationedarisamyaran.domain\\entities\\workflow\\workflowinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|d:\\automationedarisamyaranclean\\automationedarisamyaran\\automationedarisamyaran.domain\\entities\\workflow\\workflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{908356D9-70FC-4AA0-8E4D-4DFD4D474592}|AutomationEdariSamyaran.Domain\\AutomationEdariSamyaran.Domain.csproj|solutionrelative:automationedarisamyaran.domain\\entities\\workflow\\workflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 143,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 141,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +43,80 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WorkflowInstanceStep.cs",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowInstanceStep.cs",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowInstanceStep.cs",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowInstanceStep.cs",
+              "RelativeToolTip": "AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowInstanceStep.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T13:03:52.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WorkflowInstance.cs",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowInstance.cs",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowInstance.cs",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowInstance.cs",
+              "RelativeToolTip": "AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowInstance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T13:03:49.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WorkflowStep.cs",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowStep.cs",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowStep.cs",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowStep.cs",
+              "RelativeToolTip": "AutomationEdariSamyaran.Domain\\Entities\\Workflow\\WorkflowStep.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T13:03:36.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Workflow.cs",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Workflow\\Workflow.cs",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.Domain\\Entities\\Workflow\\Workflow.cs",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Workflow\\Workflow.cs",
+              "RelativeToolTip": "AutomationEdariSamyaran.Domain\\Entities\\Workflow\\Workflow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T13:03:23.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Personal.cs",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Personal.cs",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.Domain\\Entities\\Personal.cs",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Personal.cs",
+              "RelativeToolTip": "AutomationEdariSamyaran.Domain\\Entities\\Personal.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T13:03:11.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Department.cs",
+              "DocumentMoniker": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Department.cs",
+              "RelativeDocumentMoniker": "AutomationEdariSamyaran.Domain\\Entities\\Department.cs",
+              "ToolTip": "D:\\AutomationEdariSamyaranClean\\AutomationEdariSamyaran\\AutomationEdariSamyaran.Domain\\Entities\\Department.cs",
+              "RelativeToolTip": "AutomationEdariSamyaran.Domain\\Entities\\Department.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAjwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T13:02:38.971Z",
+              "EditorCaption": ""
             }
           ]
         }
