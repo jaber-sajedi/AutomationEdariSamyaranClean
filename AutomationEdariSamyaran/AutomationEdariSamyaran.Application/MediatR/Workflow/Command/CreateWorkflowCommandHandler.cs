@@ -34,7 +34,7 @@ namespace AutomationEdariSamyaran.Application.MediatR.Workflow.Command
                     "WORKFLOW_DUPLICATE");
 
 
-            var workflow = new Domain.Entities.Workflow
+            var workflow = new Domain.Entities.Workflow.Workflow
             {
                 Name = request.Name,
                 Description = request.Description

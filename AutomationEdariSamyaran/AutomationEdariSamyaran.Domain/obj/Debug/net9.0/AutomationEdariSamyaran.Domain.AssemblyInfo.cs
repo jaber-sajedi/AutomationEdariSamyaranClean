@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutomationEdariSamyaran.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+113ad71388a03f0862bf4fa480a676beb4181d90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68769eaf9673b0cd9835968d31843ab3700ecc2c")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutomationEdariSamyaran.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutomationEdariSamyaran.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

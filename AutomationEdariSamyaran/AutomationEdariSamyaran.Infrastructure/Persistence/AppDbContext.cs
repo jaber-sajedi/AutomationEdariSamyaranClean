@@ -17,6 +17,7 @@ namespace AutomationEdariSamyaran.Infrastructure.Persistence
         public DbSet<Personal> Personals => Set<Personal>();
         public DbSet<Department>  Departments => Set<Department>();
         public DbSet<Position>  Positions => Set<Position>();
+        public DbSet<Section>  Sections => Set<Section>();
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using AutomationEdariSamyaran.WPF.ViewModels;
 
 namespace AutomationEdariSamyaran.WPF.Views
 {
@@ -22,6 +23,7 @@ namespace AutomationEdariSamyaran.WPF.Views
         public PersonalFormView()
         {
             InitializeComponent();
+            DataContext = new PersonalViewModel();
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

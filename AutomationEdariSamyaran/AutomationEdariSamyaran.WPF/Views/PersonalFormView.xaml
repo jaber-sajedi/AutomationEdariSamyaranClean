@@ -134,19 +134,21 @@ Nazanin"/>
 Nazanin"/>
 
 
-                <TextBlock Text="تاریخ شروع به کار:" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" Margin="0 15"/>
-                <ComboBox Grid.Row="8" Grid.Column="1" Margin="5"
+                <TextBlock Text="وضعیت تاهل:" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" Margin="0 15"/>
+                <ComboBox Grid.Row="8"
+                          Grid.Column="1"
+                          Margin="5"
                           Style="{StaticResource MaterialDesignFloatingHintComboBox}"
                           materialDesign:HintAssist.Hint="وضعیت تأهل"
                           ItemsSource="{Binding MaritalStatusList}"
-                          SelectedItem="{Binding SelectedMaritalStatus, Mode=TwoWay}"
-                >
+                          SelectedItem="{Binding SelectedMaritalStatus, Mode=TwoWay}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Converter={StaticResource EnumDisplayNameConverter}}" />
+                            <TextBlock Text="{Binding ., Converter={StaticResource EnumDisplayNameConverter}}" />
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
+
 
                 <!-- ردیف 7: انتخاب عکس -->
 

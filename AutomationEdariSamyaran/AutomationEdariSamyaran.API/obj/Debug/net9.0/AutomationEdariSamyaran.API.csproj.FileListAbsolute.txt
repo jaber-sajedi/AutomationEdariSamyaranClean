@@ -174,3 +174,4 @@ D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\FluentValidation.dll
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\bin\Debug\net9.0\FluentValidation.AspNetCore.dll
+D:\AutomationEdariSamyaranClean\AutomationEdariSamyaran\AutomationEdariSamyaran.API\obj\Debug\net9.0\swae.build.ex.cache

@@ -1,4 +1,11 @@
-﻿using AutomationEdariSamyaran.WPF.Common;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using AutomationEdariSamyaran.WPF.Common;
+using AutomationEdariSamyaran.WPF.Converter;
 using AutomationEdariSamyaran.WPF.Enums;
 using AutomationEdariSamyaran.WPF.Models;
 using AutomationEdariSamyaran.WPF.Services;
@@ -6,12 +13,6 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using FluentValidation;
 using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace AutomationEdariSamyaran.WPF.ViewModels
 {
@@ -32,13 +33,15 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
             _apiService = new RestApiService();
             MaritalStatusList = Enum.GetValues(typeof(MaritalStatus)).Cast<MaritalStatus>().ToList();
             FormType = FormType.New;
-            selectedMaritalStatus = Personal.MaritalStatus ?? MaritalStatus.Single;
+             SelectedMaritalStatus = MaritalStatusConverter.ToMaritalStatus(Personal.MaritalStatus) ?? MaritalStatus.Single;
         }
 
         public PersonalViewModel(PersonalDto? inputPersonalDto)
         {
             _apiService = new RestApiService();
+            MaritalStatusList = Enum.GetValues(typeof(MaritalStatus)).Cast<MaritalStatus>().ToList();
             Personal = inputPersonalDto ?? new PersonalDto();
+            SelectedMaritalStatus = (MaritalStatus)MaritalStatusConverter.NormalizeMaritalStatus(inputPersonalDto.MaritalStatus);
             FormType = FormType.Edit;
         }
 
@@ -67,7 +70,7 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
                 IsActive = Personal.IsActive,
                 NumberOfChildren = Personal.NumberOfChildren,
                 Phone = Personal.Phone,
-                MaritalStatus = Personal.MaritalStatus
+               MaritalStatus = MaritalStatusConverter.ToMaritalStatus(Personal.MaritalStatus) 
             };
 
 

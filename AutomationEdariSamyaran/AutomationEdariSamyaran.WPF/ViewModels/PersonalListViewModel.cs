@@ -1,11 +1,12 @@
-﻿using AutomationEdariSamyaran.WPF.Models;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Controls;
+using AutomationEdariSamyaran.WPF.Common;
+using AutomationEdariSamyaran.WPF.Models;
 using AutomationEdariSamyaran.WPF.Services;
 using AutomationEdariSamyaran.WPF.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MaterialDesignThemes.Wpf;
-using System.Collections.ObjectModel;
-using System.Windows.Controls;
 
 namespace AutomationEdariSamyaran.WPF.ViewModels
 {
@@ -57,11 +58,19 @@ namespace AutomationEdariSamyaran.WPF.ViewModels
 
         private async Task LoadPersonalsAsync()
         {
-            var list = await _apiService.GetPersonalsAsync();
-            if (list != null)
+            try
             {
-                foreach (var p in list)
-                    Personals.Add(p);
+                var list = await _apiService.GetPersonalsAsync();
+                if (list != null)
+                {
+                    foreach (var p in list)
+                        Personals.Add(p);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                AppMessage.CustomMessage(ex.Message, "خطای اعتبارسنجی", MyColors.Red);  
             }
         }
     }

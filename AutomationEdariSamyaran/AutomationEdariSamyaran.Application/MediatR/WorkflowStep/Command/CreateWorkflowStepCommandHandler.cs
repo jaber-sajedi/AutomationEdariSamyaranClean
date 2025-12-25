@@ -20,7 +20,7 @@ namespace AutomationEdariSamyaran.Application.MediatR.WorkflowStep.Command
 
         public async Task<int> Handle(CreateWorkflowStepCommand request, CancellationToken cancellationToken)
         {
-            var step = new Domain.Entities.WorkflowStep
+            var step = new Domain.Entities.Workflow.WorkflowStep
             {
                 WorkflowId = request.WorkflowId,
                 Name = request.Name,

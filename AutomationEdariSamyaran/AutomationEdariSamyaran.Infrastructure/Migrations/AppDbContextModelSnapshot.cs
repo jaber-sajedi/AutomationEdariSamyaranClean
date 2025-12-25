@@ -179,7 +179,25 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                     b.ToTable("Roles", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Workflow", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Section", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("SectionName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Sections", (string)null);
+                });
+
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Workflow.Workflow", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -205,7 +223,7 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                     b.ToTable("Workflows", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowInstance", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Workflow.WorkflowInstance", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -234,7 +252,7 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                     b.ToTable("WorkflowInstances", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowInstanceStep", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Workflow.WorkflowInstanceStep", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -268,7 +286,7 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                     b.ToTable("WorkflowInstanceSteps", (string)null);
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowStep", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Workflow.WorkflowStep", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -316,7 +334,7 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                     b.Navigation("Position");
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowInstance", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Workflow.WorkflowInstance", b =>
                 {
                     b.HasOne("AutomationEdariSamyaran.Domain.Entities.Personal", "Personal")
                         .WithMany()
@@ -324,7 +342,7 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Workflow", "Workflow")
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Workflow.Workflow", "Workflow")
                         .WithMany()
                         .HasForeignKey("WorkflowId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -335,20 +353,20 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                     b.Navigation("Workflow");
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowInstanceStep", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Workflow.WorkflowInstanceStep", b =>
                 {
                     b.HasOne("AutomationEdariSamyaran.Domain.Entities.Personal", "AssignedTo")
                         .WithMany()
                         .HasForeignKey("AssignedToId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.WorkflowInstance", "WorkflowInstance")
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Workflow.WorkflowInstance", "WorkflowInstance")
                         .WithMany()
                         .HasForeignKey("WorkflowInstanceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.WorkflowStep", "WorkflowStep")
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Workflow.WorkflowStep", "WorkflowStep")
                         .WithMany()
                         .HasForeignKey("WorkflowStepId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -361,14 +379,14 @@ namespace AutomationEdariSamyaran.Infrastructure.Migrations
                     b.Navigation("WorkflowStep");
                 });
 
-            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.WorkflowStep", b =>
+            modelBuilder.Entity("AutomationEdariSamyaran.Domain.Entities.Workflow.WorkflowStep", b =>
                 {
                     b.HasOne("AutomationEdariSamyaran.Domain.Entities.Role", "Role")
                         .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Workflow", "Workflow")
+                    b.HasOne("AutomationEdariSamyaran.Domain.Entities.Workflow.Workflow", "Workflow")
                         .WithMany()
                         .HasForeignKey("WorkflowId")
                         .OnDelete(DeleteBehavior.Cascade)

@@ -76,7 +76,7 @@ namespace AutomationEdariSamyaran.WPF.Models
         [Display(Name = "مسیر عکس پرسنل")]
         public string? PhotoPath { get; set; }
         [Display(Name = "وضعیت تاهل")]
-        public MaritalStatus? MaritalStatus { get; set; }
+        public int MaritalStatus { get; set; }
     }
 
 }

@@ -3,11 +3,11 @@
     "Name": "New Profile",
     "Projects": [
       {
-        "Path": "AutomationEdariSamyaran.WPF\\AutomationEdariSamyaran.WPF.csproj",
+        "Path": "AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj",
         "Action": "Start"
       },
       {
-        "Path": "AutomationEdariSamyaran.API\\AutomationEdariSamyaran.API.csproj",
+        "Path": "AutomationEdariSamyaran.WPF\\AutomationEdariSamyaran.WPF.csproj",
         "Action": "Start"
       }
     ]

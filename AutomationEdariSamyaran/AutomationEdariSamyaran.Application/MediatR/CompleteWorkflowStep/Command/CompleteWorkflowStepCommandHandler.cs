@@ -1,6 +1,7 @@
 ﻿using AutomationEdariSamyaran.Application.MediatR.CompleteWorkflowStep.Command;
 using AutomationEdariSamyaran.Application.MediatR.Workflow.Command;
 using AutomationEdariSamyaran.Domain.Entities;
+using AutomationEdariSamyaran.Domain.Entities.Workflow;
 using AutomationEdariSamyaran.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

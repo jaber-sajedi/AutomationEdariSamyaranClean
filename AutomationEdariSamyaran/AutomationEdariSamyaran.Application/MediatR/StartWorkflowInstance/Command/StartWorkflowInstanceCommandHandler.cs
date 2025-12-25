@@ -1,4 +1,5 @@
 ﻿using AutomationEdariSamyaran.Domain.Entities;
+using AutomationEdariSamyaran.Domain.Entities.Workflow;
 using AutomationEdariSamyaran.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

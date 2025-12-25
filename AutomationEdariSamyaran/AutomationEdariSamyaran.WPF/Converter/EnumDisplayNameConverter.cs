@@ -12,35 +12,30 @@ namespace AutomationEdariSamyaran.WPF.Converter
 {
     public class EnumDisplayNameConverter : IValueConverter
     {
+        private static readonly Dictionary<Enum, string> _cache = new();
+
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null) return null;
+            if (value is not Enum enumValue)
+                return value?.ToString();
 
-            var type = value.GetType();
-            if (!type.IsEnum) return value.ToString();
+            if (_cache.TryGetValue(enumValue, out var name))
+                return name;
 
-            var member = type.GetMember(value.ToString()).FirstOrDefault();
-            if (member != null)
-            {
-                var displayAttr = member.GetCustomAttribute<DisplayAttribute>();
-                if (displayAttr != null) return displayAttr.Name;
-            }
+            var member = enumValue.GetType()
+                .GetMember(enumValue.ToString())
+                .FirstOrDefault();
 
-            return value.ToString();
+            var displayName = member?
+                .GetCustomAttribute<DisplayAttribute>()?
+                .Name ?? enumValue.ToString();
+
+            _cache[enumValue] = displayName;
+            return displayName;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if (value == null) return null;
-
-            foreach (var field in targetType.GetFields())
-            {
-                var displayAttr = field.GetCustomAttribute<DisplayAttribute>();
-                if (displayAttr != null && displayAttr.Name == value.ToString())
-                    return Enum.Parse(targetType, field.Name);
-            }
-
-            return Enum.Parse(targetType, value.ToString());
-        }
+            => Binding.DoNothing;
     }
+
 }
