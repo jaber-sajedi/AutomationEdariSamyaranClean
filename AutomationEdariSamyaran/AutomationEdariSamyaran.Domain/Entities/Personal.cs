@@ -71,6 +71,7 @@ namespace AutomationEdariSamyaran.Domain.Entities
             public DateTime? EmploymentEndDate { get; set; } // تاریخ پایان خدمت (در صورت ترک سازمان)
 
             public bool IsActive { get; set; } = true; // فعال / غیرفعال
+
         }
     }
 

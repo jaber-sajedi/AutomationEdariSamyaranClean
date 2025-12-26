@@ -58,7 +58,7 @@ namespace AutomationEdariSamyaran.WPF.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AutomationEdariSamyaran.WPF;component/views/personalformview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AutomationEdariSamyaran.WPF;V1.0.0.0;component/views/personalformview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\PersonalFormView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

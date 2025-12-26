@@ -30,5 +30,32 @@ namespace AutomationEdariSamyaran.API.Controllers
             var result = await _mediator.Send(new GetAllPersonalsQuery());
             return Ok(result);
         }
+
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdatePersonalCommand command)
+        {
+            if (id != command.Id)
+                return BadRequest(new { message = "شناسه ارسال‌شده در آدرس با شناسه موجود در اطلاعات ارسالی مطابقت ندارد." });
+
+            var result = await _mediator.Send(command);
+
+            return Ok(new
+            {
+                personalId = id,
+                message = "اطلاعات پرسنل با موفقیت به‌روزرسانی شد."
+            });
+        }
+
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await _mediator.Send(new DeletePersonalCommand(id));
+
+            return Ok(new
+            {
+                personalId = id,
+                message = "پرسنل با موفقیت حذف شد."
+            });
+        }
     }
 }
