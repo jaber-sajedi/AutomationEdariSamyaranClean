@@ -1,23 +1,24 @@
 ﻿
-using AutomationEdariSamyaran.Application.Exceptions;
-using AutomationEdariSamyaran.Infrastructure.Persistence;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationEdariSamyaran.Application.Exceptions;
+using AutomationEdariSamyaran.Application.Interfaces;
+ 
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace AutomationEdariSamyaran.Application.MediatR.Workflow.Command
 {
     public class CreateWorkflowCommandHandler : IRequestHandler<CreateWorkflowCommand, int>
     {
-        private readonly AppDbContext _context;
+        private readonly IAppDbContext _context;
 
-        public CreateWorkflowCommandHandler(AppDbContext context)
+        public CreateWorkflowCommandHandler(IAppDbContext context)
         {
             _context = context;
         }

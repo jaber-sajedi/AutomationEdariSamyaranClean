@@ -1,26 +1,27 @@
-﻿using AutomationEdariSamyaran.Infrastructure.Persistence;
-using MediatR;
+﻿ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationEdariSamyaran.Application.Interfaces;
+using MediatR;
 
 namespace AutomationEdariSamyaran.Application.MediatR.WorkflowStep.Command
 {
    
     public class CreateWorkflowStepCommandHandler : IRequestHandler<CreateWorkflowStepCommand, int>
     {
-        private readonly AppDbContext _context;
+        private readonly IAppDbContext _context;
 
-        public CreateWorkflowStepCommandHandler(AppDbContext context)
+        public CreateWorkflowStepCommandHandler(IAppDbContext context)
         {
             _context = context;
         }
 
         public async Task<int> Handle(CreateWorkflowStepCommand request, CancellationToken cancellationToken)
         {
-            var step = new Domain.Entities.Workflow.WorkflowStep
+            var step = new  Domain.Entities.Workflow.WorkflowStep
             {
                 WorkflowId = request.WorkflowId,
                 Name = request.Name,

@@ -1,20 +1,21 @@
-﻿using AutomationEdariSamyaran.Application.DTOs;
-using AutomationEdariSamyaran.Infrastructure.Persistence;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationEdariSamyaran.Application.DTOs;
+using AutomationEdariSamyaran.Application.Interfaces;
+
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutomationEdariSamyaran.Application.MediatR.WorkflowStep.Query
 {
     public class GetWorkflowStepsByWorkflowIdQueryHandler : IRequestHandler<GetWorkflowStepsByWorkflowIdQuery, List<WorkflowStepDto>>
     {
-        private readonly AppDbContext _context;
+        private readonly IAppDbContext _context;
 
-        public GetWorkflowStepsByWorkflowIdQueryHandler(AppDbContext context)
+        public GetWorkflowStepsByWorkflowIdQueryHandler(IAppDbContext context)
         {
             _context = context;
         }

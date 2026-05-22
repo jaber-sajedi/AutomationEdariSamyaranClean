@@ -1,21 +1,21 @@
-﻿using AutomationEdariSamyaran.Domain.Entities;
-using AutomationEdariSamyaran.Domain.Entities.Workflow;
-using AutomationEdariSamyaran.Infrastructure.Persistence;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
+﻿ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationEdariSamyaran.Application.Interfaces;
+using AutomationEdariSamyaran.Domain.Entities.Workflow;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutomationEdariSamyaran.Application.MediatR.StartWorkflowInstance.Command
 {
     public class StartWorkflowInstanceCommandHandler : IRequestHandler<StartWorkflowInstanceCommand, int>
     {
-        private readonly AppDbContext _context;
+        private readonly IAppDbContext _context;
 
-        public StartWorkflowInstanceCommandHandler(AppDbContext context)
+        public StartWorkflowInstanceCommandHandler(IAppDbContext context)
         {
             _context = context;
         }

@@ -1,19 +1,20 @@
-﻿using AutomationEdariSamyaran.Infrastructure.Persistence;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
+﻿ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationEdariSamyaran.Application.Interfaces;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutomationEdariSamyaran.Application.MediatR.Role.Command
 {
     public class UpdateRoleCommandHandler : IRequestHandler<UpdateRoleCommand, bool>
     {
-        private readonly AppDbContext _context;
+        private readonly IAppDbContext _context;
 
-        public UpdateRoleCommandHandler(AppDbContext context)
+        public UpdateRoleCommandHandler(IAppDbContext context)
         {
             _context = context;
         }

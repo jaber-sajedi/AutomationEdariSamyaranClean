@@ -1,6 +1,4 @@
 ﻿using AutomationEdariSamyaran.Application.MediatR.CompleteWorkflowStep.Command;
-using AutomationEdariSamyaran.Domain.Entities;
-using AutomationEdariSamyaran.Infrastructure.Persistence;
 using MediatR;
 using System;
 using System.Collections.Generic;

@@ -1,19 +1,20 @@
-﻿using AutomationEdariSamyaran.Domain.Entities.Workflow;
-using AutomationEdariSamyaran.Infrastructure.Persistence;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
+﻿ 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutomationEdariSamyaran.Application.Interfaces;
+using AutomationEdariSamyaran.Domain.Entities.Workflow;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace AutomationEdariSamyaran.Application.MediatR.StartWorkflowInstance.Query
 {
     public class GetWorkflowInstancesQueryHandler : IRequestHandler<GetWorkflowInstancesQuery, List<WorkflowInstance>>
     {
-        private readonly AppDbContext _context;
-        public GetWorkflowInstancesQueryHandler(AppDbContext context) => _context = context;
+        private readonly IAppDbContext _context;
+        public GetWorkflowInstancesQueryHandler(IAppDbContext context) => _context = context;
 
         public async Task<List<WorkflowInstance>> Handle(GetWorkflowInstancesQuery request, CancellationToken cancellationToken)
         {

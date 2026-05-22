@@ -1,8 +1,7 @@
-﻿using AutomationEdariSamyaran.Application.MediatR.CompleteWorkflowStep.Command;
+﻿using AutomationEdariSamyaran.Application.Interfaces;
+using AutomationEdariSamyaran.Application.MediatR.CompleteWorkflowStep.Command;
 using AutomationEdariSamyaran.Application.MediatR.Workflow.Command;
-using AutomationEdariSamyaran.Domain.Entities;
 using AutomationEdariSamyaran.Domain.Entities.Workflow;
-using AutomationEdariSamyaran.Infrastructure.Persistence;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,9 +9,9 @@ namespace AutomationEdariSamyaran.Application.MediatR.Workflow.Command
 {
     public class CompleteWorkflowStepCommandHandler : IRequestHandler<CompleteWorkflowStepCommand, bool>
     {
-        private readonly AppDbContext _context;
+        private readonly IAppDbContext _context;
 
-        public CompleteWorkflowStepCommandHandler(AppDbContext context)
+        public CompleteWorkflowStepCommandHandler(IAppDbContext context)
         {
             _context = context;
         }

@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutomationEdariSamyaran.Application.MediatR.WorkflowStep.Query
 {
-    namespace AutomationEdariSamyaran.Application.MediatR.WorkflowInstance.Query
-    {
+     
         // Query برای گرفتن مراحل یک Instance
         public record GetWorkflowInstanceStepsQuery(int WorkflowInstanceId) : IRequest<List<WorkflowInstanceStepDto>>;
 
@@ -22,5 +21,5 @@ namespace AutomationEdariSamyaran.Application.MediatR.WorkflowStep.Query
             public DateTime? CompletedAt { get; set; }
             public int Order { get; set; }
         }
-    }
+     
 }
