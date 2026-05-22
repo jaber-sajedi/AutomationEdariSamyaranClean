@@ -1,5 +1,5 @@
 ﻿using AutomationEdariSamyaran.Application.MediatR.StartWorkflowInstance.Command;
-using AutomationEdariSamyaran.Application.MediatR.WorkflowStep.Query.AutomationEdariSamyaran.Application.MediatR.WorkflowInstance.Query;
+using AutomationEdariSamyaran.Application.MediatR.WorkflowStep.Query;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

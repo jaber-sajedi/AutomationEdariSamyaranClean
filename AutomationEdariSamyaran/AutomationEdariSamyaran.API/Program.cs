@@ -1,17 +1,19 @@
-﻿using AutomationEdariSamyaran.API;
+﻿using System.Reflection;
+using System.Text;
+using AutomationEdariSamyaran.API;
 using AutomationEdariSamyaran.API.Filters;
 using AutomationEdariSamyaran.API.Middleware;
 using AutomationEdariSamyaran.Application.Behaviors;
 using AutomationEdariSamyaran.Application.Contracts;
+using AutomationEdariSamyaran.Application.Interfaces;
 using AutomationEdariSamyaran.Domain.Entities;
 using AutomationEdariSamyaran.Infrastructure.Persistence;
+using AutomationEdariSamyaran.Infrastructure.Service;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using System.Reflection;
-using System.Text;
-using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,9 +47,18 @@ builder.Services.AddAuthorization();
 builder.Services.AddSingleton<FileStorageService>();
 
 // ---------------- Database ----------------
+ 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
+
+// ✅ این خط حیاتی است
+builder.Services.AddScoped<IAppDbContext>(provider =>
+    provider.GetRequiredService<AppDbContext>());
+
+// ✅ فقط یک بار ثبت شود
+builder.Services.AddSingleton<IDapperContext, DapperContext>();
 
 // ---------------- MediatR ----------------
 builder.Services.AddMediatR(cfg =>
@@ -67,7 +78,8 @@ builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionHand
 // ---------------- Repository ----------------
 //builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 //builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
+builder.Services.AddSingleton<DapperContext>();
+builder.Services.AddScoped<ILetterNumberGenerator, LetterNumberGenerator>();
 // ---------------- Swagger ----------------
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
