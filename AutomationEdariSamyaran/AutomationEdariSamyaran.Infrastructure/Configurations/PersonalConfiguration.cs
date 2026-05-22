@@ -94,6 +94,14 @@ namespace AutomationEdariSamyaran.Infrastructure.Persistence.Configuration
             // Index روی PersonalCode
             builder.HasIndex(p => p.PersonalCode)
                    .IsUnique(false);
+
+
+            // Section
+            builder.Property(p => p.IdSection);
+            builder.HasOne(p => p.Section)
+                   .WithMany()
+                   .HasForeignKey(p => p.IdSection)
+                   .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
