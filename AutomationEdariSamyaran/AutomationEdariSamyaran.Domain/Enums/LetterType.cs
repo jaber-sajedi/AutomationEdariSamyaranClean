@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AutomationEdariSamyaran.Domain.Enums
 {
-    public enum letter_Type
+    public enum LetterType
     {
         [Display(Name = "نامه های داخلی سازمانی")]
-        Internal_Letter = 1,
+        Incoming = 1,
         [Display(Name = "نامه های بیرون سازمانی")]
-        External_Letter = 2,
+        Outgoing = 2,
     }
 }
